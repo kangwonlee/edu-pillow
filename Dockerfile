@@ -41,14 +41,7 @@ WORKDIR /turtle
 
 COPY requirements.txt /turtle/requirements.txt
 
-RUN git clone --depth=1 --branch v0.1.9 https://github.com/kangwonlee/gemini-python-tutor /app/temp/
-
-RUN uv pip install --no-cache-dir --system --requirement /turtle/requirements.txt \
-    && uv pip install --no-cache-dir --system --requirement /app/temp/requirements.txt \
-    && mkdir -p /app/ai_tutor/ \
-    && mv /app/temp/*.py /app/ai_tutor \
-    && mv /app/temp/locale/ /app/ai_tutor/locale/ \
-    && rm -rf /app/temp
+RUN uv pip install --no-cache-dir --system --requirement /turtle/requirements.txt
 
 RUN useradd -u 1001 -m runner
 
