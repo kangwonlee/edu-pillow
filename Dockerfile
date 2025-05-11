@@ -19,6 +19,7 @@ RUN apt-get update \
         libxrender1 \
         libxtst6 \
         python3-tk \
+        scrot \
         tcl-dev \
         tk-dev \
         xauth \
